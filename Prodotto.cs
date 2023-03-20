@@ -8,6 +8,8 @@ class Prodotto
 {
     private int codiceBase;
     public int Codice { get { return codiceBase; } }
+    public string CodicePadLeft() {return Codice.ToString().PadLeft(8, '0');}
+
     public string Nome { get; set; }
     public string Descrizione { get; set; }
     public double Prezzo { get; set; }
@@ -25,7 +27,7 @@ class Prodotto
     private int GeneraCodice()
     {
         Random random = new Random();
-        return random.Next(1, 1000);
+        return random.Next(100, 99999999);
     }
 
     public double PrezzoBase()

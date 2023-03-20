@@ -30,18 +30,9 @@ class Prodotto
         return random.Next(100, 99999999);
     }
 
-    public double PrezzoBase()
+    public string PrezzoConIva()
     {
-        return Prezzo;
-    }
-
-    public double PrezzoConIva()
-    {
-        return Prezzo * (1 + Iva / 100);
-    }
-
-    public string NomeEsteso()
-    {
-        return Codice + " + " + Nome;
+        double prezzoIva = Prezzo * (1 + Iva / 100);
+        return prezzoIva.ToString("0.00");
     }
 }
